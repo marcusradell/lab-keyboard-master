@@ -1,15 +1,8 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import { getCode } from "./api";
+import { useCode } from "./use-code";
 
 function App() {
-  const [code, setCode] = useState("");
-
-  useEffect(() => {
-    getCode().then((code) => setCode(code));
-
-    return () => {};
-  }, []);
+  const code = useCode();
 
   return (
     <>
